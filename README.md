@@ -1,6 +1,18 @@
 # Ustoria
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+This is a dynamic e-store with pages:
+- home page
+- shop page
+- single product page
+- cart page
+- checkout page
+
+## Technologies used
+
+- Bootstrap 5
+- FontAwesome 6
+- json product database
 
 ## Development server
 
