@@ -10,23 +10,25 @@ import { faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { faTruck } from '@fortawesome/free-solid-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ SliderCarouselComponent,
+  imports: [SliderCarouselComponent,
     TopSellerComponent,
     TopNewComponent,
     RecentlyViewedComponent,
-     RouterOutlet,
-      CommonModule,
-       FontAwesomeModule],
+    RouterOutlet,
+    CommonModule,
+    FontAwesomeModule,
+    RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-refresh = faRefresh;
-truck = faTruck;
-gift = faGift;
-lock = faLock
+  refresh = faRefresh;
+  truck = faTruck;
+  gift = faGift;
+  lock = faLock
 }
