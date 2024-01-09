@@ -16,58 +16,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Search Products</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Search products...">
-                        <input type="submit" value="Search">
-                    </form>
-                </div>
-                
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Products</h2>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$800.00</del>
-                        </div>                             
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$800.00</del>
-                        </div>                             
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$800.00</del>
-                        </div>                             
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$800.00</del>
-                        </div>                             
-                    </div>
-                </div>
-                
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Recent Posts</h2>
-                    <ul>
-                        <li><a href="#">Sony Smart TV - 2015</a></li>
-                        <li><a href="#">Sony Smart TV - 2015</a></li>
-                        <li><a href="#">Sony Smart TV - 2015</a></li>
-                        <li><a href="#">Sony Smart TV - 2015</a></li>
-                        <li><a href="#">Sony Smart TV - 2015</a></li>
-                    </ul>
-                </div>
-            </div>
-            
+                <app-side-bar></app-side-bar>
+            </div>          
             <div class="col-md-8">
                 <div class="product-content-right">
                     <div class="woocommerce">
@@ -84,21 +34,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @for(cartItem of cart.items; track cartItem.id){
                                     <tr class="cart_item">
                                         <td class="product-remove">
                                             <a title="Remove this item" class="remove" href="#">×</a> 
                                         </td>
 
                                         <td class="product-thumbnail">
-                                            <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="img/product-thumb-2.jpg"></a>
+                                            <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" [src]="cartItem.product.photo"></a>
                                         </td>
 
                                         <td class="product-name">
-                                            <a href="single-product.html">Ship Your Idea</a> 
+                                            <a href="single-product.html">{{cartItem.product.title}}</a> 
                                         </td>
 
                                         <td class="product-price">
-                                            <span class="amount">£15.00</span> 
+                                            <span class="amount">£{{cartItem.price}}</span> 
                                         </td>
 
                                         <td class="product-quantity">
@@ -110,7 +61,7 @@
                                         </td>
 
                                         <td class="product-subtotal">
-                                            <span class="amount">£15.00</span> 
+                                            <span class="amount">£{{cart.totalPrice}}</span> 
                                         </td>
                                     </tr>
                                     <tr>
@@ -124,6 +75,7 @@
                                             <input type="submit" value="Checkout" name="proceed" class="checkout-button button alt wc-forward">
                                         </td>
                                     </tr>
+                                }
                                 </tbody>
                             </table>
                         </form>
