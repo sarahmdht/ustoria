@@ -31,7 +31,9 @@ body {
 font-size: 14 px;
 }
 
-
+a {
+  text-decoration: none;
+}
 
 .header-area {
     background: none repeat scroll 0 0 #f4f4f4;
