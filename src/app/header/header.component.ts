@@ -4,7 +4,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-
+import { Cart } from '../shared/models/Cart';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -17,5 +18,14 @@ export class HeaderComponent {
 heart = faHeart;
 user = faUser;
 cart = faShoppingCart;
+
+carttotal!: Cart;
+constructor(private cartService: CartService) {
+  this.setCart();
+ }
+
+setCart() {
+  this.carttotal = this.cartService.getCart();
+}
 
 }

@@ -1,3 +1,31 @@
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div> 
+            <!-- <div class="navbar-collapse collapse"> -->
+                <div>
+                <ul class="nav navbar-nav d-flex flex-lg-row">
+                    <li class="nav-item"><a routerLink="" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a routerLink="/shop" class="nav-link active">Shop page</a></li>
+                    <li class="nav-item"><a routerLink="" class="nav-link">Single product</a></li>
+                    <li class="nav-item"><a routerLink="/cart" class="nav-link">Cart</a></li>
+                    <li class="nav-item"><a routerLink="/checkout" class="nav-link">Checkout</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Category</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Others</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" >Contact</a></li>
+                </ul>
+            </div>  
+        </div>
+    </div>
+</div> <!-- End mainmenu area -->
+
 <div class="product-big-title-area">
     <div class="container">
         <div class="row">
@@ -21,7 +49,7 @@
                     <div class="product-upper">
                         <img [src]="product.photo" alt="">
                     </div>
-                    <h2><a href="">{{product.title}}</a></h2>
+                    <h2><a routerLink="/product/{{product.id}}">{{product.title}}</a></h2>
                     <div class="product-carousel-price">
                         <ins>${{product.discount}}</ins> <del>${{product.price}}</del>
                     </div>

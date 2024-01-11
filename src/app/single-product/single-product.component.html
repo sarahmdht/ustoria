@@ -1,3 +1,30 @@
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div> 
+            <!-- <div class="navbar-collapse collapse"> -->
+                <div>
+                <ul class="nav navbar-nav d-flex flex-lg-row">
+                    <li class="nav-item"><a routerLink="" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a routerLink="/shop" class="nav-link">Shop page</a></li>
+                    <li class="nav-item"><a routerLink="/product/:id" class="nav-link active">Single product</a></li>
+                    <li class="nav-item"><a routerLink="/cart" class="nav-link">Cart</a></li>
+                    <li class="nav-item"><a routerLink="/checkout" class="nav-link">Checkout</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Category</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Others</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" >Contact</a></li>
+                </ul>
+            </div>  
+        </div>
+    </div>
+</div> <!-- End mainmenu area -->
 <div class="product-big-title-area">
     <div class="container">
         <div class="row">
@@ -16,56 +43,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Search Products</h2>
-                    <form action="">
-                        <input type="text" placeholder="Search products...">
-                        <input type="submit" value="Search">
-                    </form>
-                </div>
-                
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Products</h2>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$100.00</del>
-                        </div>                             
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$100.00</del>
-                        </div>                             
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$100.00</del>
-                        </div>                             
-                    </div>
-                    <div class="thubmnail-recent">
-                        <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
-                        <h2><a href="">Sony Smart TV - 2015</a></h2>
-                        <div class="product-sidebar-price">
-                            <ins>$700.00</ins> <del>$100.00</del>
-                        </div>                             
-                    </div>
-                </div>
-                
-                <div class="single-sidebar">
-                    <h2 class="sidebar-title">Recent Posts</h2>
-                    <ul>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
-                        <li><a href="">Sony Smart TV - 2015</a></li>
-                    </ul>
-                </div>
+                <app-side-bar></app-side-bar>
             </div>
             
             <div class="col-md-8">
@@ -80,7 +58,7 @@
                         <div class="col-sm-6">
                             <div class="product-images">
                                 <div class="product-main-img">
-                                    <img src="img/product-2.jpg" alt="">
+                                    <img [src]="productDetails?.photo" alt="">
                                 </div>
                                 
                                 <div class="product-gallery">
@@ -93,9 +71,9 @@
                         
                         <div class="col-sm-6">
                             <div class="product-inner">
-                                <h2 class="product-name">Sony Smart TV - 2015</h2>
+                                <h2 class="product-name">{{productDetails?.title}}</h2>
                                 <div class="product-inner-price">
-                                    <ins>$700.00</ins> <del>$100.00</del>
+                                    <ins>{{productDetails?.discount}}</ins> <del>{{productDetails?.price}}</del>
                                 </div>    
                                 
                                 <form action="" class="cart">

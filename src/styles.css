@@ -1224,6 +1224,11 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
     } 
     .mainmenu-area ul.navbar-nav li a {
       padding: 15px;
+      text-decoration: none;
+    }  
+    .mainmenu-area ul.navbar-nav li a :active {
+      padding: 15px;
+      text-decoration: none;
     }  
     .mainmenu-area {position: relative !important}
     .slide-text {

@@ -1,3 +1,31 @@
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div> 
+            <!-- <div class="navbar-collapse collapse"> -->
+                <div>
+                <ul class="nav navbar-nav d-flex flex-lg-row">
+                    <li class="nav-item"><a routerLink="" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a routerLink="/shop" class="nav-link">Shop page</a></li>
+                    <li class="nav-item"><a routerLink="" class="nav-link">Single product</a></li>
+                    <li class="nav-item"><a routerLink="/cart" class="nav-link active">Cart</a></li>
+                    <li class="nav-item"><a routerLink="/checkout" class="nav-link">Checkout</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Category</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Others</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link" >Contact</a></li>
+                </ul>
+            </div>  
+        </div>
+    </div>
+</div> <!-- End mainmenu area -->
+
 <div class="product-big-title-area">
     <div class="container">
         <div class="row">
@@ -8,7 +36,9 @@
             </div>
         </div>
     </div>
-</div> <!-- End Page title area -->
+</div> 
+
+<!-- ------ End Page title area ----- -->
 
 
 <div class="single-product-area">
@@ -54,14 +84,14 @@
 
                                         <td class="product-quantity">
                                             <div class="quantity buttons_added">
-                                                <input type="button" class="minus" value="-">
-                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="1" min="0" step="1">
-                                                <input type="button" class="plus" value="+">
+                                                <input type="button" class="minus" value="-" (click)="minus()">
+                                                <input type="number" size="4" id="qty" class="input-text qty text" title="Qty" min="0" step="1" [value]="counter">
+                                                <input type="button" class="plus" value="+" (click)="plus()">
                                             </div>
                                         </td>
 
                                         <td class="product-subtotal">
-                                            <span class="amount">£{{cart.totalPrice}}</span> 
+                                            <span class="amount">£{{total}}</span> 
                                         </td>
                                     </tr>
                                     <tr>
@@ -116,7 +146,7 @@
                                 <tbody>
                                     <tr class="cart-subtotal">
                                         <th>Cart Subtotal</th>
-                                        <td><span class="amount">£15.00</span></td>
+                                        <td><span class="amount">£{{cart.totalPrice}}</span></td>
                                     </tr>
 
                                     <tr class="shipping">
@@ -126,7 +156,7 @@
 
                                     <tr class="order-total">
                                         <th>Order Total</th>
-                                        <td><strong><span class="amount">£15.00</span></strong> </td>
+                                        <td><strong><span class="amount">£{{cart.totalPrice}}</span></strong> </td>
                                     </tr>
                                 </tbody>
                             </table>

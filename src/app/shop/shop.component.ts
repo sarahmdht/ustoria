@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../shared/models/Product';
 import { CartService } from '../services/cart.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })
