@@ -6,7 +6,7 @@ export class Cart {
     get totalPrice(): number {
         let totalPrice = 0 ;
         this.items.forEach(item => {
-            totalPrice += item.price
+            totalPrice += item.totalitem
         })
         return totalPrice;
     }

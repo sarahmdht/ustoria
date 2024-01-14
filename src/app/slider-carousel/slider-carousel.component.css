@@ -56,6 +56,7 @@
 .block-slider .bx-pager{
 	display: block;
     text-align: center;
+	margin-top: 5px;
 }
 .block-slider .bx-pager-item{
 	width: 15px;

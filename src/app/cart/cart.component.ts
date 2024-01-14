@@ -6,6 +6,7 @@ import { SideBarComponent } from '../side-bar/side-bar.component';
 import { FormsModule } from '@angular/forms';
 import CartItem from '../shared/models/CartItem';
 import { RouterLink } from '@angular/router';
+import { Product } from '../shared/models/Product';
 
 @Component({
   selector: 'app-cart-page',
@@ -17,32 +18,44 @@ import { RouterLink } from '@angular/router';
 export class CartComponent {
   cart!: Cart;
   item!: CartItem;
-  i= 1;
-  counter: number = 1;
-  total = 1;
+  product!: Product;
+  i = 1;
+  qty = 1;
 
 
   constructor(private cartService: CartService) {
     this.setCart();
-   }
+  }
 
+  // delete
+  removeFromCart(CartItem: CartItem) {
+    this.cartService.removeFromCart(CartItem.product.id);
+    this.setCart();
+  }
+
+  // update
+  changeQuantity(cartItem: CartItem, quantityInString: string) {
+    const quantity = parseInt(quantityInString);
+    this.cartService.changeQuantity(cartItem.product.id, quantity);
+    this.setCart();
+  }
+
+  // read
   setCart() {
     this.cart = this.cartService.getCart();
   }
 
- plus() {
-if(this.i !=100){
-  this.i++;
-  this.counter= this.i;
- this.total = this.item.price * this.counter;
-}
- }
- 
- minus() {
-  if(this.i !=1){
-    this.i--;
-    this.counter= this.i;
-    this.total = this.item.price * this.counter;
+  plus() {
+    if (this.i != 100) {
+      this.i++;
+      this.qty= this.i;
+    }
   }
- }
+
+  minus() {
+    if (this.i != 1) {
+      this.i--;
+      this.qty = this.i;
+    }
+  }
 }

@@ -11,12 +11,26 @@ export class CartService {
 
   constructor() { }
 
-  // To add new Product to cart
-  addToCart(product: Product): void {
+
+  addToCart(product: Product): void { 
+    let CartItems = this.cart.items.find(item => item.product.id === product.id);
+    if (CartItems) {
+      this.changeQuantity(product.id, CartItems.quantity + 1);
+      return;
+    }
     this.cart.items.push(new CartItem(product));
-    console.log(this.cart);
+    
   }
 
+  removeFromCart(productId: number): void{
+    this.cart.items = this.cart.items.filter(item => item.product.id != productId);
+  }
+
+  changeQuantity(productId: number, quantity: number){
+    let CartItem = this.cart.items.find(item => item.product.id === productId);
+    if(!CartItem) return;
+    CartItem.quantity = quantity;
+  }
   // To display Cart items
   getCart(): Cart {
     return this.cart;

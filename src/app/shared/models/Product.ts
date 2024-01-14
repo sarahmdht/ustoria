@@ -5,5 +5,5 @@ export class Product {
     price!: number;
     discount?: number;
     photo!: string;
-    publishDate!: Date;
+    publishDate!: number;    
 }
