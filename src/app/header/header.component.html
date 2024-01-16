@@ -12,12 +12,14 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <div class="header-right">
-                    <ul class="list-unstyled list-inline d-flex">
+                    <ul class="list-unstyled list-inline d-flex justify-content-center">
                         <li class="dropdown dropdown-small">
-                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
+                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span
+                                    class="key">currency :</span><span class="value">USD </span><b
+                                    class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">USD</a></li>
                                 <li><a href="#">INR</a></li>
@@ -26,7 +28,9 @@
                         </li>
 
                         <li class="dropdown dropdown-small">
-                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
+                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span
+                                    class="key">language :</span><span class="value">English </span><b
+                                    class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">English</a></li>
                                 <li><a href="#">French</a></li>
@@ -48,13 +52,40 @@
                     <h1><a routerLink=""><img src="../../assets/img/logo.png"></a></h1>
                 </div>
             </div>
-            
+
             <div class="col-sm-6">
                 <div class="shopping-item">
-                    <a routerLink="cart" class="text-decoration-none">Cart - <span class="cart-amunt">${{carttotal.totalPrice}} </span> <fa-icon [icon]="cart" class="fs-6"></fa-icon><span class="product-count"></span></a>
+                    <a routerLink="cart" class="text-decoration-none">Cart - <span
+                            class="cart-amunt">${{carttotal.totalPrice}} </span> <fa-icon [icon]="cart"
+                            class="fs-6"></fa-icon><span class="product-count"></span></a>
                 </div>
             </div>
         </div>
     </div>
 </div> <!-- End site branding area -->
 
+<div class="mainmenu-area sticky-top">
+    <nav class="navbar navbar-expand-sm">
+        <div class="container">
+            <button type="button" class="navbar-toggler " data-bs-toggle="collapse" data-bs-target="#menuItems" aria-controls="menuItems" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuItems">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a routerLink="" data-bs-toggle="pill" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item"><a routerLink="/shop" data-bs-toggle="pill" class="nav-link">Shop page</a>
+                    </li>
+                    <li class="nav-item"><a routerLink="" data-bs-toggle="pill" class="nav-link">Single product</a>
+                    </li>
+                    <li class="nav-item"><a routerLink="/cart" data-bs-toggle="pill" class="nav-link">Cart</a></li>
+                    <li class="nav-item"><a routerLink="/checkout" data-bs-toggle="pill" class="nav-link">Checkout</a>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">Category</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Others</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div> <!-- End mainmenu area -->
