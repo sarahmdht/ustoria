@@ -45,17 +45,21 @@ export class CartComponent {
     this.cart = this.cartService.getCart();
   }
 
-  plus() {
+  plus(cartItem: CartItem) {
     if (this.i != 100) {
       this.i++;
       this.qty= this.i;
+      this.cartService.changeQuantity(cartItem.product.id , this.qty);
+      this.setCart();
     }
   }
 
-  minus() {
+  minus(cartItem: CartItem, quantityInString: string) {
     if (this.i != 1) {
       this.i--;
       this.qty = this.i;
+      this.cartService.changeQuantity(cartItem.product.id , this.qty);
+      this.setCart();
     }
   }
 }

@@ -1,3 +1,33 @@
+@font-face {
+  font-family: "Roboto Condended";
+  src: url(assets/fonts/Roboto_Condensed/static/RobotoCondensed-Medium.ttf) format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto Condended";
+  src: url(assets/fonts/Roboto_Condensed/static/RobotoCondensed-Light.ttf) format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Roboto Condended";
+  src: url(assets/fonts/Roboto_Condensed/static/RobotoCondensed-Bold.ttf) format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(assets/fonts/Raleway/static/Raleway-Medium.ttf) format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(assets/fonts/Raleway/static/Raleway-ExtraLight.ttf) format("opentype");
+  font-weight: 100;
+}
+
 .floatleft { float: left }
 .floatright { float: right }
 .alignleft {
@@ -451,7 +481,6 @@ z-index: 999;}
 .single-product {
   overflow: hidden;
 }
-.single-product:hover {}
 .single-product:hover .product-hover a.add-to-cart-link {top: 32%;}
 .single-product:hover .product-hover a.view-details-link {bottom: 32%;}
 .single-product:hover .product-hover:after{left: 0}
@@ -700,7 +729,7 @@ width: 10px;
 
 .single-product-area {
   padding: 80px 0 130px;
-}
+  
 
 
 
@@ -725,7 +754,6 @@ input[type="submit"], button[type=submit] {
     color: #fff;
     padding: 11px 20px;
     text-transform: uppercase;
-    width: 20%;
 }
 input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
 .single-sidebar input[type="text"] {
@@ -939,10 +967,13 @@ td.product-quantity div.quantity {
     margin: 0;
 }
 td.actions div.coupon {
-    float: left;
+    text-align: left;
+
+    
 }
 .cart-collaterals {
     overflow: hidden;
+}
 }
 .cross-sells {
     float: left;
@@ -1141,7 +1172,7 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
       width: 160px;
     }
     .coupon input[type="text"] {
-      width: 100px;
+      width: 40px;
     }  
     input[type="submit"], button[type="submit"] {
       padding: 11px 15px;
