@@ -1,0 +1,44 @@
+@for (product of products; track product.id) {
+    @switch (product.publishDate) {
+    @case (2024){
+    <div class="single-product">
+        <div class="product-f-image">
+            <img [src]="product.photo" alt="">
+            <div class="product-hover">
+                <a (click)="addCartItem(product)" class="add-to-cart-link"><i
+                        class="fa fa-shopping-cart"></i> Add to
+                    cart</a>
+                <a routerLink="/product/:id" class="view-details-link"><i
+                        class="fa fa-link"></i>
+                    See details</a>
+            </div>
+        </div>
+
+        <h2><a routerLink="/product/:id">{{product.title}}</a></h2>
+        <div class="product-carousel-price">
+            <ins>${{product.discount}}</ins> <del>${{product.price}}</del>
+        </div>
+    </div>
+    }
+    @case (2023) {
+        <div class="single-product">
+            <div class="product-f-image">
+                <img [src]="product.photo" alt="">
+                <div class="product-hover">
+                    <a (click)="addCartItem(product)" class="add-to-cart-link"><i
+                            class="fa fa-shopping-cart"></i> Add to
+                        cart</a>
+                    <a routerLink="/product/:id" class="view-details-link"><i
+                            class="fa fa-link"></i>
+                        See details</a>
+                </div>
+            </div>
+
+            <h2><a routerLink="/product/:id">{{product.title}}</a></h2>
+            <div class="product-carousel-price">
+                <ins>${{product.discount}}</ins>
+            </div>
+        </div>
+    }
+    }
+    }

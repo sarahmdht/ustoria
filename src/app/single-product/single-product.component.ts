@@ -3,11 +3,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../shared/models/Product';
 import { SideBarComponent } from '../side-bar/side-bar.component';
+import { MainContentComponent } from '../main-content/main-content.component';
 
 @Component({
   selector: 'app-single-product',
   standalone: true,
-  imports: [SideBarComponent, RouterLink],
+  imports: [SideBarComponent, RouterLink, MainContentComponent],
   templateUrl: './single-product.component.html',
   styleUrl: './single-product.component.css'
 })

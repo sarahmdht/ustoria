@@ -24,6 +24,5 @@ export class ShopComponent {
   }
   addCartItem(item: Product) {
     this.cartService.addToCart(item);
-    this.router.navigateByUrl('/cart')
   }
 }

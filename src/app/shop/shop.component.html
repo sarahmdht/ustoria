@@ -15,7 +15,7 @@
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
-            @for(product of products; track product.id) {
+            @for(product of products | slice:0:16; track product.id) {
             <div class="col-md-3 col-sm-6">
                 <div class="single-shop-product">
                     <div class="product-upper">
@@ -24,7 +24,7 @@
                     <!-- <h2><a routerLink="/product/{{product.id}}">{{product.title}}</a></h2> -->
                     <h2>{{product.title}}</h2>
                     <div class="product-carousel-price">
-                        <!-- <ins>${{item.price}}</ins> <del>${{product.price}}</del> -->
+                        <ins>{{product.discount | currency}}</ins> <del>{{product.price | currency}}</del>
                     </div>
 
                     <div class="product-option-shop">

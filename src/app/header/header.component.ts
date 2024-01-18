@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Cart } from '../shared/models/Cart';
+import { CartService } from '../services/cart.service';
+
+// fontAwesome 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { Cart } from '../shared/models/Cart';
-import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-header',

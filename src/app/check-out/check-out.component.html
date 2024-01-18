@@ -736,12 +736,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @for(cartItem of cart.items; track cartItem.id){
+                                        @for(cartItem of carttotal.items; track cartItem.id){
                                         <tr class="cart_item">
                                             <td class="product-name">
-                                                {{cartItem.product.title}}<strong class="product-quantity">x</strong> </td>
+                                                {{cartItem.product.title}}<strong class="product-quantity"> x </strong>{{item.quantity}}</td>
                                             <td class="product-total">
-                                                <span class="amount">£15.00</span> </td>
+                                                <span class="amount">£{{item.totalitem}}</span> </td>
                                         </tr>
                                     }
                                     </tbody>
@@ -765,7 +765,7 @@
 
                                         <tr class="order-total">
                                             <th>Order Total</th>
-                                            <td><strong><span class="amount">£${{carttotal.totalPrice + 15}}</span></strong> </td>
+                                            <td><strong><span class="amount">£${{carttotal.totalPrice + 0}}</span></strong> </td>
                                         </tr>
 
                                     </tfoot>

@@ -370,7 +370,7 @@ z-index: 999;}
   margin-left: -30px;
 }
 .button-radius:hover{
-  padding-left: 20px;
+  padding-left: 0px;
   padding-right: 40px;
 }
 
