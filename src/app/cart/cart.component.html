@@ -60,7 +60,7 @@
 
                                         <td class="product-quantity">
                                             <div class="quantity buttons_added">
-                                                <input type="button" class="minus" value="-" (click)="minus(cartItem, quantitySelect.value)">
+                                                <input type="button" class="minus" value="-" (click)="minus(cartItem)">
                                                 <input type="number" size="4" id="qty" class="input-text qty text"
                                                     title="Qty" min="0" step="1" [value]="i" #quantitySelect
                                                     (change)="changeQuantity(cartItem, quantitySelect.value)">

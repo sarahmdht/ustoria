@@ -3,7 +3,6 @@ import { Product } from "./Product";
 export default class CartItem {
     id!: number;
     product: Product;
-    quantity: number =1;
    
 
     constructor(product: Product){
@@ -17,6 +16,6 @@ export default class CartItem {
         return this.product.discount ? this.product.discount : this.product.price;
     }
      get totalitem(): number {
-        return this.price * this.quantity;
+        return this.price * this.product.quantity;
     }
 }

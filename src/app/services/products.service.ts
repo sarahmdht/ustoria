@@ -22,4 +22,4 @@ export class ProductsService {
      const data = await fetch(`${this.productsApiUrl}/${id}`);
      return await data.json() ?? {};
    }
-}
+  }

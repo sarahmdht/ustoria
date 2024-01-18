@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../shared/models/Product';
 import { CartService } from '../services/cart.service';
-import { ActivatedRoute, Route, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import CartItem from '../shared/models/CartItem';
 
 @Component({

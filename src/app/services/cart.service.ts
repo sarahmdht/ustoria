@@ -15,7 +15,7 @@ export class CartService {
   addToCart(product: Product): void { 
     let CartItems = this.cart.items.find(item => item.product.id === product.id);
     if (CartItems) {
-      this.changeQuantity(product.id, CartItems.quantity + 1);
+      this.changeQuantity(product.id, CartItems.product.quantity + 1);
       return;
     }
     this.cart.items.push(new CartItem(product));
@@ -29,7 +29,7 @@ export class CartService {
   changeQuantity(productId: number, quantity: number){
     let CartItem = this.cart.items.find(item => item.product.id === productId);
     if(!CartItem) return;
-    CartItem.quantity = quantity;
+    CartItem.product.quantity = quantity;
   }
   // To display Cart items
   getCart(): Cart {

@@ -736,10 +736,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @for(cartItem of carttotal.items; track cartItem.id){
+                                        @for(item of carttotal.items; track item.id){
                                         <tr class="cart_item">
                                             <td class="product-name">
-                                                {{cartItem.product.title}}<strong class="product-quantity"> x </strong>{{item.quantity}}</td>
+                                                {{item.product.title}}<strong class="product-quantity"> x </strong>{{item.product.quantity}}</td>
                                             <td class="product-total">
                                                 <span class="amount">£{{item.totalitem}}</span> </td>
                                         </tr>

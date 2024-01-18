@@ -54,7 +54,7 @@ export class CartComponent {
     }
   }
 
-  minus(cartItem: CartItem, quantityInString: string) {
+  minus(cartItem: CartItem) {
     if (this.i != 1) {
       this.i--;
       this.qty = this.i;

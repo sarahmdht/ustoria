@@ -4,6 +4,7 @@ export class Product {
     title!: string;
     price!: number;
     discount?: number;
+    quantity!: number;
     photo!: string;
     publishDate!: number;    
 }
