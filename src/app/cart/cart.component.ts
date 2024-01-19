@@ -19,8 +19,6 @@ export class CartComponent {
   cart!: Cart;
   item!: CartItem;
   product!: Product;
-  i = 1;
-  qty = 1;
 
 
   constructor(private cartService: CartService) {

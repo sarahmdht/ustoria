@@ -16,11 +16,11 @@
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
-<!-- ----- sidebar area ----- -->
+            <!-- ----- sidebar area ----- -->
             <div class="col-md-4">
                 <app-side-bar></app-side-bar>
             </div>
-<!-- ----- product area ------  -->
+            <!-- ----- product area ------  -->
             <div class="col-md-8">
                 <div class="product-content-right">
                     <div class="product-breadcroumb">
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                         </div>
-<!-- ------ right area ------ -->
+                        <!-- ------ right area ------ -->
                         <div class="col-sm-6">
                             <div class="product-inner">
                                 <h2 class="product-name">{{productDetails?.title}}</h2>
@@ -53,79 +53,92 @@
 
                                 <form action="" class="cart">
                                     <div class="quantity">
-                                        <input type="number" size="4" id="qty" class="input-text qty text"
-                                                    title="Qty" min="0" step="1"  #quantitySelect (change)="changeQuantity(quantitySelect.value)">
+                                        <input type="number" size="4" id="qty" class="input-text qty text" title="Qty"
+                                            min="0" step="1" #quantitySelect
+                                            (change)="changeQuantity(quantitySelect.value)">
                                     </div>
-                                    <button class="add_to_cart_button " type="submit" (click)="addToCart()">Add to cart</button>
+                                    <button class="add_to_cart_button " type="submit" (click)="addToCart()">Add to
+                                        cart</button>
                                 </form>
 
                                 <div class="product-inner-category">
                                     <p>Category: <a href="">Summer</a>. Tags: <a href="">awesome</a>, <a
                                             href="">best</a>, <a href="">sale</a>, <a href="">shoes</a>. </p>
                                 </div>
-<!-- ------ tabs ------ -->
+                                <!-- ------ tabs ------ -->
                                 <div role="tabpanel">
-
-                                    <ul class="product-tab" role="tablist">
-                                        <li role="presentation" class="active"><a href="/#description"
-                                                aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
-                                        <li role="presentation"><a href="#reviews" aria-controls="profile" role="tab"
-                                                data-toggle="tab">Reviews</a></li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade in active" id="description">
-                                            <h2>Product Description</h2>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique,
-                                                diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis
-                                                ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex
-                                                aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim
-                                                porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida
-                                                diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales
-                                                nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem
-                                                lorem, semper bibendum lectus lobortis ac.</p>
-
-                                            <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex.
-                                                Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In
-                                                malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non
-                                                malesuada sem accumsan in. Morbi vel sodales libero.</p>
-                                        </div>
-                                        <div role="tabpanel" class="tab-pane fade" id="reviews">
-                                            <h2>Reviews</h2>
-                                            <div class="submit-review">
-                                                <p><label for="name">Name</label> <input name="name" type="text"></p>
-                                                <p><label for="email">Email</label> <input name="email" type="email">
-                                                </p>
-                                                <div class="rating-chooser">
-                                                    <p>Your rating</p>
-
-                                                    <div class="rating-wrap-post">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                </div>
-                                                <p><label for="review">Your review</label> <textarea name="review" id=""
-                                                        cols="30" rows="10"></textarea></p>
-                                                <p><input type="submit" value="Submit"></p>
+                                    <mat-tab-group animationDuration="0ms" disablePagination="true">
+                                        <mat-tab>
+                                            <ng-template mat-tab-label="Reviews">
+                                                <ul class="product-tab">
+                                                    <li [class.active]="activeTab === 'home'"><a
+                                                            (click)="changeTab('home')">Description</a></li>
+                                                </ul>
+                                            </ng-template>
+                                            <div class="tab-content my-4 tab-pane">
+                                                <h2 class="h-5">Product Description</h2>
+                                                <p class="fs-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Nam
+                                                    tristique, diam in consequat iaculis, est purus iaculis mauris,
+                                                    imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla
+                                                    risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius
+                                                    lectus id turpis dignissim porta. Quisque magna arcu, blandit quis
+                                                    felis vehicula, feugiat gravida diam. Nullam nec turpis ligula.
+                                                    Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget
+                                                    elit malesuada aliquet. In varius lorem lorem, semper bibendum
+                                                    lectus lobortis ac.</p>
+                                                <p class="fs-6">Mauris placerat vitae lorem gravida viverra. Mauris in
+                                                    fringilla ex.
+                                                    Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis.
+                                                    In malesuada pulvinar neque a consectetur. Nunc aliquam gravida
+                                                    purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </mat-tab>
+                                        <mat-tab>
+                                            <ng-template mat-tab-label="Reviews">
+                                                <ul class="product-tab">
+                                                    <li [class.active]="activeTab === 'profile'"><a
+                                                            (click)="changeTab('profile')">Reviews</a></li>
+                                                </ul>
+                                            </ng-template>
+                                            <div class="tab-content my-4 tab-pane">
+                                                <h2 class="h-5">Reviews</h2>
+                                                <div class="submit-review fs-6">
+                                                    <p><label for="name">Name</label> <input name="name" type="text">
+                                                    </p>
+                                                    <p><label for="email">Email</label> <input name="email"
+                                                            type="email"></p>
+                                                    <div class="rating-chooser">
+                                                        <p>Your rating</p>
+                                                        <div class="rating-wrap-post">
+                                                            <fa-icon [icon]="star"></fa-icon>
+                                                            <fa-icon [icon]="star"></fa-icon>
+                                                            <fa-icon [icon]="star"></fa-icon>
+                                                            <fa-icon [icon]="star"></fa-icon>
+                                                            <fa-icon [icon]="star"></fa-icon>
+                                                        </div>
+                                                    </div>
+                                                    <p><label for="review">Your review</label> <textarea name="review"
+                                                            id="" cols="30" rows="10"></textarea></p>
+                                                    <p><input type="submit" value="Submit"></p>
+                                                </div>
+                                            </div>
+                                        </mat-tab>
+                                    </mat-tab-group>
+
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- ------ Related Products ------ -->
-                    <div class="related-products-wrapper">
-                        <h2 class="related-products-title">Related Products</h2>
-                        <div class="related-products-carousel">
-                            <app-main-content></app-main-content>
+                        <!-- ------ Related Products ------ -->
+                        <div class="related-products-wrapper">
+                            <h2 class="related-products-title">Related Products</h2>
+                            <div class="related-products-carousel">
+                                <app-main-content></app-main-content>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

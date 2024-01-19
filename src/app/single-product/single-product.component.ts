@@ -7,11 +7,14 @@ import { Cart } from '../shared/models/Cart';
 import CartItem from '../shared/models/CartItem';
 import { SideBarComponent } from '../side-bar/side-bar.component';
 import { MainContentComponent } from '../main-content/main-content.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-single-product',
   standalone: true,
-  imports: [SideBarComponent, RouterLink, MainContentComponent],
+  imports: [SideBarComponent, FontAwesomeModule, RouterLink, MainContentComponent, MatTabsModule],
   templateUrl: './single-product.component.html',
   styleUrl: './single-product.component.css'
 })
@@ -21,6 +24,9 @@ export class SingleProductComponent {
   item!: CartItem;
   cart!: Cart;
   products!: Product;
+  activeTab: string = 'home';
+  star = faStar;
+
 
   constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService, private router:Router , private cartService: CartService) {
     this.activatedRoute.params.subscribe(params => {
@@ -51,9 +57,11 @@ export class SingleProductComponent {
       this.setCart();
     }
   }
+  //   to handle tabs
+  
+  
+  changeTab(tab: string) {
+    this.activeTab = tab;
+  }
+  
 }
-//   // read
-//   setCart() {
-//     this.cart = this.cartService.getCart();
-//   }
-// }

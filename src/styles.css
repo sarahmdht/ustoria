@@ -863,10 +863,13 @@ form.cart {
 .product-tab {
     border-bottom: 1px solid #ddd;
     list-style: outside none none;
-    margin: 0 0 30px;
+    margin: 0 0 3px;
     padding: 0;
     text-align: center;
+    text-decoration: none;
 }
+
+
 .product-tab li {
     display: inline-block;
 }
