@@ -1,7 +1,7 @@
 import { Product } from "./Product";
 
 export default class CartItem {
-    id!: number;
+    id!: string;
     product: Product;
    
 

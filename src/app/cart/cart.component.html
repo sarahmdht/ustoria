@@ -17,10 +17,14 @@
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
+
+            <!-- ------ sidebar area ----- -->
             <div class="col-md-4">
                 <app-side-bar></app-side-bar>
             </div>
             <div class="col-md-8">
+
+                <!-- ----- cart table area ----- -->
                 <div class="product-content-right">
                     <div class="woocommerce">
                         <form method="post" action="#">
@@ -60,11 +64,11 @@
 
                                         <td class="product-quantity">
                                             <div class="quantity buttons_added">
-                                                <input type="button" class="minus" value="-" (click)="minus(cartItem)">
+                                                <input type="button" class="minus" value="-" (click)="handleQuantity('minus', cartItem)">
                                                 <input type="number" size="4" id="qty" class="input-text qty text"
-                                                    title="Qty" min="0" step="1" [value]="i" #quantitySelect
-                                                    (change)="changeQuantity(cartItem, quantitySelect.value)">
-                                                <input type="button" class="plus" value="+" (click)="plus(cartItem)">
+                                                    title="Qty" min="0" step="1" [value]="cartItem.product.quantity" #quantitySelect
+                                                    (change)="changeQuantity(cartItem, quantitySelect.value)" >
+                                                <input type="button" class="plus" value="+" (click)="handleQuantity('plus', cartItem)">
                                             </div>
                                         </td>
 

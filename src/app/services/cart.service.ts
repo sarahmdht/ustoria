@@ -22,11 +22,12 @@ export class CartService {
     
   }
 
-  removeFromCart(productId: number): void{
+
+  removeFromCart(productId: string): void{
     this.cart.items = this.cart.items.filter(item => item.product.id != productId);
   }
 
-  changeQuantity(productId: number, quantity: number){
+  changeQuantity(productId: string, quantity: number){
     let CartItem = this.cart.items.find(item => item.product.id === productId);
     if(!CartItem) return;
     CartItem.product.quantity = quantity;

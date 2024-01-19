@@ -45,21 +45,15 @@ export class CartComponent {
     this.cart = this.cartService.getCart();
   }
 
-  plus(cartItem: CartItem) {
-    if (this.i != 100) {
-      this.i++;
-      this.qty= this.i;
-      this.cartService.changeQuantity(cartItem.product.id , this.qty);
-      this.setCart();
-    }
-  }
 
-  minus(cartItem: CartItem) {
-    if (this.i != 1) {
-      this.i--;
-      this.qty = this.i;
-      this.cartService.changeQuantity(cartItem.product.id , this.qty);
-      this.setCart();
+  handleQuantity(val: string, cartItem: CartItem) {
+    if (cartItem.product.quantity< 100 && val === 'plus') {
+      cartItem.product.quantity++;
+    } else if (cartItem.product.quantity > 1 && val === 'minus') {
+      cartItem.product.quantity--;
     }
+  
+    this.cartService.changeQuantity(cartItem.product.id, cartItem.product.quantity);
+    this.setCart();
   }
 }
