@@ -743,6 +743,13 @@
                                             <td class="product-total">
                                                 <span class="amount">£{{item.totalitem}}</span> </td>
                                         </tr>
+                                    }@empty{
+                                        <tr class="cart_item">
+                                            <td class="product-name">
+                                                No products added</td>
+                                            <td class="product-total">
+                                                <span class="amount">£0</span> </td>
+                                        </tr>
                                     }
                                     </tbody>
                                     <tfoot>

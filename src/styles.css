@@ -186,7 +186,7 @@ z-index: 999;}
     border-radius: 0%;
 }
 
-.mainmenu-area ul.nav-pills li a:hover, .mainmenu-area ul.nav-pills li a:active {background: #5a88ca !important; color:#FFF;}
+.mainmenu-area ul.nav-pills li a:hover, .mainmenu-area ul.nav-pills .nav-link.active {background: #5a88ca !important; color:#FFF;}
 .mainmenu-area .nav > li > a:focus {color: #FFF; }
 
 .slider-area { width:80%; position:relative; margin:0 auto; padding:5px;}
@@ -850,7 +850,8 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     background: none repeat scroll 0 0 #5a88ca;
     border: medium none;
     color: #fff;
-    padding: 6px 25px;display: inline-block
+    padding: 6px 25px;
+    display: inline-block
 }
 .add_to_cart_button:hover {background-color: #222;color: #fff;text-decoration: none}
 form.cart {
@@ -1015,8 +1016,6 @@ div.cart-collaterals ul.products li.product {
 .cart_totals table th {
     background: none repeat scroll 0 0 #f4f4f4;
 }
-.onsale {
-}
 div.cart-collaterals ul.products li.product .onsale {
     background: none repeat scroll 0 0 #5a88ca;
     color: #fff;
@@ -1034,8 +1033,6 @@ div.cart-collaterals ul.products li.product .price {
     display: block;
     margin-bottom: 10px;
     overflow: hidden;
-}
-.price > ins {
 }
 div.cart-collaterals ul.products li.product .price ins {
     color: #5a88ca;

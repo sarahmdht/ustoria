@@ -8,7 +8,7 @@
                 <a (click)="addCartItem(product)" class="add-to-cart-link"><i
                         class="fa fa-shopping-cart"></i> Add to
                     cart</a>
-                <a routerLink="/product/:id" class="view-details-link"><i
+                <a routerLink="/products/{{product.id}}" class="view-details-link"><i
                         class="fa fa-link"></i>
                     See details</a>
             </div>
@@ -28,7 +28,7 @@
                     <a (click)="addCartItem(product)" class="add-to-cart-link"><i
                             class="fa fa-shopping-cart"></i> Add to
                         cart</a>
-                    <a routerLink="/product/:id" class="view-details-link"><i
+                    <a routerLink="/products/{{product.id}}" class="view-details-link"><i
                             class="fa fa-link"></i>
                         See details</a>
                 </div>

@@ -74,16 +74,16 @@
                                     </tr>
                                     <tr>
                                         <td class="actions" colspan="8" >
-                                            <div class="coupon">
+                                            <div class="coupon ">
                                                 <label for="coupon_code">Coupon:</label>
                                                 <input type="text" placeholder="Coupon code" value="" id="coupon_code"
                                                     class="input-text w-25" name="coupon_code">
                                                 <input type="submit" value="Apply Coupon" name="apply_coupon"
                                                     class="button">
+                                                    <input type="submit" value="Update Cart" name="update_cart" class="button ms-4 me-2">
+                                                    <input type="submit" value="Checkout" name="proceed"
+                                                        class="button " routerLink="/checkout">
                                             </div>
-                                            <input type="submit" value="Update Cart" name="update_cart" class="button m-2 h-auto">
-                                            <input type="submit" value="Checkout" name="proceed"
-                                                class="checkout-button button " routerLink="/checkout">
                                         </td>
                                     </tr>
                                     } @empty {
@@ -119,7 +119,7 @@
                                 <h2>You may be interested in...</h2>
                                 <ul class="products d-flex">
                                     <li class="product">
-                                        <a href="single-product.html">
+                                        <a routerLink="/product/1">
                                             <img width="325" height="325" alt="T_4_front"
                                                 class="attachment-shop_catalog wp-post-image" src="../../assets/img/product-2.jpg">
                                             <h3>Ship Your Idea</h3>
@@ -127,12 +127,12 @@
                                         </a>
 
                                         <a class="add_to_cart_button" data-quantity="1" data-product_sku=""
-                                            data-product_id="22" rel="nofollow" href="single-product.html">Select
+                                            data-product_id="22" rel="nofollow" routerLink="/product/1">Select
                                             options</a>
                                     </li>
 
                                     <li class="product">
-                                        <a href="single-product.html">
+                                        <a routerLink="/product/4">
                                             <img width="325" height="325" alt="T_4_front"
                                                 class="attachment-shop_catalog wp-post-image" src="../../assets/img/product-4.jpg">
                                             <h3>Ship Your Idea</h3>
@@ -140,7 +140,7 @@
                                         </a>
 
                                         <a class="add_to_cart_button" data-quantity="1" data-product_sku=""
-                                            data-product_id="22" rel="nofollow" href="single-product.html">Select
+                                            data-product_id="22" rel="nofollow" routerLink="/product/4">Select
                                             options</a>
                                     </li>
                                 </ul>
@@ -172,8 +172,8 @@
 
 
                             <form method="post" action="#" class="shipping_calculator">
-                                <h2><a class="shipping-calculator-button" data-toggle="collapse"
-                                        href="#calcalute-shipping-wrap" aria-expanded="false"
+                                <h2><a class="shipping-calculator-button" data-bs-toggle="collapse" data-bs-target="#calcalute-shipping-wrap"ata-toggle="collapse"
+                                        aria-expanded="false"
                                         aria-controls="calcalute-shipping-wrap">Calculate Shipping</a></h2>
 
                                 <section id="calcalute-shipping-wrap" class="shipping-calculator-form collapse">
