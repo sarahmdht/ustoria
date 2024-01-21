@@ -54,10 +54,10 @@
                                 <form action="" class="cart">
                                     <div class="quantity">
                                         <input type="number" size="4" id="qty" class="input-text qty text" title="Qty"
-                                            min="0" step="1" #quantitySelect
+                                            min="0" step="1" value="0" #quantitySelect
                                             (change)="changeQuantity(quantitySelect.value)">
                                     </div>
-                                    <button class="add_to_cart_button " type="submit" (click)="addToCart()">Add to
+                                    <button class="add_to_cart_button " type="button" (click)="addToCart()">Add to
                                         cart</button>
                                 </form>
 

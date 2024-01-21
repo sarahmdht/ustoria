@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router , RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 import { Product } from '../shared/models/Product';
 import { CartService } from '../services/cart.service';
@@ -20,7 +20,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 })
 export class SingleProductComponent {
   productId: number | undefined;
-  productDetails: Product | undefined; 
+  productDetails: Product | undefined;
   item!: CartItem;
   cart!: Cart;
   products!: Product;
@@ -28,7 +28,11 @@ export class SingleProductComponent {
   star = faStar;
 
 
-  constructor(private activatedRoute: ActivatedRoute, private productService: ProductsService, private router:Router , private cartService: CartService) {
+  constructor(private activatedRoute: ActivatedRoute,
+    private productService: ProductsService,
+    private router: Router,
+    private cartService: CartService) {
+
     this.activatedRoute.params.subscribe(params => {
       this.productId = Number(params['id']);
       this.productService.getProductById(this.productId).then((product: Product | undefined) => {
@@ -45,11 +49,13 @@ export class SingleProductComponent {
   addToCart() {
     if (this.productDetails) {
       this.cartService.addToCart(this.productDetails);
+      this.router.navigateByUrl('/cart');
     }
+
   }
 
 
-  
+
   changeQuantity(quantityInString: string) {
     if (this.productDetails) {
       const quantity = parseInt(quantityInString);
@@ -58,10 +64,10 @@ export class SingleProductComponent {
     }
   }
   //   to handle tabs
-  
-  
+
+
   changeTab(tab: string) {
     this.activeTab = tab;
   }
-  
+
 }
