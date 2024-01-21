@@ -226,6 +226,10 @@ z-index: 999;}
 	-ms-transition: all 0.45s ease;
 	transition: all 0.45s ease;
 }
+.bx-wrapper {
+  border: none !important;    /* Remove border */
+  box-shadow: none !important; /* Remove shadow */
+}
 .block-slider img{
 	width: 100%;
 	height: auto;
@@ -254,15 +258,19 @@ z-index: 999;}
 /*------------------
 [4. Slidershow]
 ------------------*/
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #1bd172 ;
+}
 
 .block-slider .bx-pager{
 	display: block;
     text-align: center;
 }
-.block-slider .bx-pager-item{
+.bx-wrapper .bx-pager.bx-default-pager a {
 	width: 15px;
 	height: 15px;
-	background: #fff;
 	font-size: 0;
 	display: inline-block;
 	border-radius: 50%;

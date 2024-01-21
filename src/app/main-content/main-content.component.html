@@ -5,11 +5,11 @@
         <div class="product-f-image">
             <img [src]="product.photo" alt="">
             <div class="product-hover">
-                <a (click)="addCartItem(product)" class="add-to-cart-link"><i
-                        class="fa fa-shopping-cart"></i> Add to
+                <a (click)="addCartItem(product)" class="add-to-cart-link"><fa-icon
+                    [icon]="cart"></fa-icon> Add to
                     cart</a>
-                <a routerLink="/products/{{product.id}}" class="view-details-link"><i
-                        class="fa fa-link"></i>
+                <a routerLink="/products/{{product.id}}" class="view-details-link"><fa-icon
+                        [icon]="link"></fa-icon>
                     See details</a>
             </div>
         </div>
@@ -25,11 +25,11 @@
             <div class="product-f-image">
                 <img [src]="product.photo" alt="">
                 <div class="product-hover">
-                    <a (click)="addCartItem(product)" class="add-to-cart-link"><i
-                            class="fa fa-shopping-cart"></i> Add to
+                    <a (click)="addCartItem(product)" class="add-to-cart-link"><fa-icon
+                            [icon]="cart"></fa-icon> Add to
                         cart</a>
-                    <a routerLink="/products/{{product.id}}" class="view-details-link"><i
-                            class="fa fa-link"></i>
+                        <a routerLink="/products/{{product.id}}" class="view-details-link"><fa-icon
+                            [icon]="link"></fa-icon>
                         See details</a>
                 </div>
             </div>
