@@ -1,44 +1,51 @@
-@for (product of products; track product.id) {
-    @switch (product.publishDate) {
-    @case (2024){
-    <div class="single-product">
-        <div class="product-f-image">
-            <img [src]="product.photo" alt="">
-            <div class="product-hover">
-                <a (click)="addCartItem(product)" class="add-to-cart-link"><fa-icon
-                    [icon]="cart"></fa-icon> Add to
-                    cart</a>
-                <a routerLink="/products/{{product.id}}" class="view-details-link"><fa-icon
-                        [icon]="link"></fa-icon>
-                    See details</a>
-            </div>
-        </div>
-
-        <h2><a routerLink="/product/:id">{{product.title}}</a></h2>
-        <div class="product-carousel-price">
-            <ins>${{product.discount}}</ins> <del>${{product.price}}</del>
-        </div>
-    </div>
-    }
-    @case (2023) {
-        <div class="single-product">
-            <div class="product-f-image">
-                <img [src]="product.photo" alt="">
-                <div class="product-hover">
-                    <a (click)="addCartItem(product)" class="add-to-cart-link"><fa-icon
-                            [icon]="cart"></fa-icon> Add to
-                        cart</a>
-                        <a routerLink="/products/{{product.id}}" class="view-details-link"><fa-icon
-                            [icon]="link"></fa-icon>
-                        See details</a>
+<div class="product-carousel">
+    <owl-carousel-o [options]="customOptions">
+        <ng-container>
+            @for (product of products; track product.id) {
+            @switch (product.publishDate) {
+            @case (2024){
+            <ng-template carouselSlide [id]="product.id">
+                <div class="single-product">
+                    <div class="product-f-image">
+                        <img [src]="product.photo" alt="">
+                        <div class="product-hover">
+                            <a (click)="addCartItem(product)" class="add-to-cart-link"><fa-icon [icon]="cart"></fa-icon>
+                                Add to
+                                cart</a>
+                            <a routerLink="/products/{{product.id}}" class="view-details-link"><fa-icon
+                                    [icon]="link"></fa-icon>
+                                See details</a>
+                        </div>
+                    </div>
+                    <h2><a routerLink="/product/:id">{{product.title}}</a></h2>
+                    <div class="product-carousel-price">
+                        <ins>${{product.discount}}</ins> <del>${{product.price}}</del>
+                    </div>
                 </div>
-            </div>
-
-            <h2><a routerLink="/product/:id">{{product.title}}</a></h2>
-            <div class="product-carousel-price">
-                <ins>${{product.discount}}</ins>
-            </div>
-        </div>
-    }
-    }
-    }
+            </ng-template>
+            } @case (2023) {
+            <ng-template carouselSlide [id]="product.id">
+                <div class="single-product">
+                    <div class="product-f-image">
+                        <img [src]="product.photo" alt="">
+                        <div class="product-hover">
+                            <a (click)="addCartItem(product)" class="add-to-cart-link"><fa-icon [icon]="cart"></fa-icon>
+                                Add to
+                                cart</a>
+                            <a routerLink="/products/{{product.id}}" class="view-details-link"><fa-icon
+                                    [icon]="link"></fa-icon>
+                                See details</a>
+                        </div>
+                    </div>
+                    <h2><a routerLink="/product/:id">{{product.title}}</a></h2>
+                    <div class="product-carousel-price">
+                        <ins>${{product.discount}}</ins>
+                    </div>
+                </div>
+            </ng-template>
+            }
+            }
+            }
+        </ng-container>
+    </owl-carousel-o>
+</div>

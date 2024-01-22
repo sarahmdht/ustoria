@@ -28,7 +28,7 @@
                 <div class="product-content-right">
                     <div class="woocommerce">
                         <form method="post" action="#">
-                            <table cellspacing="0" class="shop_table cart">
+                            <table cellspacing="0" class="shop_table cart table">
                                 <thead>
                                     <tr>
                                         <th class="product-remove">&nbsp;</th>
@@ -46,103 +46,94 @@
                                             <a title="Remove this item" class="remove"
                                                 (click)="removeFromCart(cartItem)">×</a>
                                         </td>
-
                                         <td class="product-thumbnail">
                                             <a routerLink="/product/{{cartItem.product.id}}"><img width="145"
                                                     height="145" alt="poster_1_up" class="shop_thumbnail"
                                                     [src]="cartItem.product.photo"></a>
                                         </td>
-
                                         <td class="product-name">
-                                            <a
-                                                routerLink="/product/{{cartItem.product.id}}">{{cartItem.product.title | slice:0:13}}...</a>
+                                            <a routerLink="/product/{{cartItem.product.id}}">{{cartItem.product.title |
+                                                slice:0:13}}...</a>
                                         </td>
-
                                         <td class="product-price">
                                             <span class="amount">£{{cartItem.price}}</span>
                                         </td>
-
                                         <td class="product-quantity">
                                             <div class="quantity buttons_added">
-                                                <input type="button" class="minus" value="-" (click)="handleQuantity('minus', cartItem)">
+                                                <input type="button" class="minus" value="-"
+                                                    (click)="handleQuantity('minus', cartItem)">
                                                 <input type="number" size="4" id="qty" class="input-text qty text"
-                                                    title="Qty" min="0" step="1" [value]="cartItem.product.quantity" #quantitySelect
-                                                    (change)="changeQuantity(cartItem, quantitySelect.value)" >
-                                                <input type="button" class="plus" value="+" (click)="handleQuantity('plus', cartItem)">
+                                                    title="Qty" min="0" step="1" [value]="cartItem.product.quantity"
+                                                    #quantitySelect
+                                                    (change)="changeQuantity(cartItem, quantitySelect.value)">
+                                                <input type="button" class="plus" value="+"
+                                                    (click)="handleQuantity('plus', cartItem)">
                                             </div>
                                         </td>
-
                                         <td class="product-subtotal">
                                             <span class="amount">£{{cartItem.totalitem}}</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="actions" colspan="8" >
+                                        <td class="actions" colspan="8">
                                             <div class="coupon ">
                                                 <label for="coupon_code">Coupon:</label>
                                                 <input type="text" placeholder="Coupon code" value="" id="coupon_code"
                                                     class="input-text w-25" name="coupon_code">
                                                 <input type="submit" value="Apply Coupon" name="apply_coupon"
                                                     class="button">
-                                                    <input type="submit" value="Update Cart" name="update_cart" class="button ms-4 me-2">
-                                                    <input type="submit" value="Checkout" name="proceed"
-                                                        class="button " routerLink="/checkout">
+                                                <input type="submit" value="Update Cart" name="update_cart"
+                                                    class="button ms-4 me-2">
+                                                <input type="submit" value="Checkout" name="proceed" class="button "
+                                                    routerLink="/checkout">
                                             </div>
                                         </td>
                                     </tr>
                                     } @empty {
-                                        <tr class="cart_item">
-                                            <td class="product-remove">
-                                            </td>
-    
-                                            <td class="product-thumbnail">
-                                            </td>
-    
-                                            <td class="product-name">
+                                    <tr class="cart_item">
+                                        <td class="product-remove">
+                                        </td>
+                                        <td class="product-thumbnail">
+                                        </td>
+                                        <td class="product-name">
                                             <p>No products to show ..</p>
-                                            </td>
-    
-                                            <td class="product-price">
-                                            </td>
-    
-                                            <td class="product-quantity">
-                                            </td>
-    
-                                            <td class="product-subtotal">    
-                                            </td>
-                                        </tr>
+                                        </td>
+                                        <td class="product-price">
+                                        </td>
+                                        <td class="product-quantity">
+                                        </td>
+                                        <td class="product-subtotal">
+                                        </td>
+                                    </tr>
                                     }
                                 </tbody>
                             </table>
                         </form>
-
+                        <!-- ----- you may be interested in ----- -->
                         <div class="cart-collaterals">
-
-
-                            <div class="cross-sells">
+                            <div class="cross-sells d-block">
                                 <h2>You may be interested in...</h2>
-                                <ul class="products d-flex">
+                                <ul class="products d-flex flex-column">
                                     <li class="product">
                                         <a routerLink="/product/1">
                                             <img width="325" height="325" alt="T_4_front"
-                                                class="attachment-shop_catalog wp-post-image" src="../../assets/img/product-2.jpg">
+                                                class="attachment-shop_catalog wp-post-image"
+                                                src="../../assets/img/product-2.jpg">
                                             <h3>Ship Your Idea</h3>
                                             <span class="price"><span class="amount">£20.00</span></span>
                                         </a>
-
                                         <a class="add_to_cart_button" data-quantity="1" data-product_sku=""
                                             data-product_id="22" rel="nofollow" routerLink="/product/1">Select
                                             options</a>
                                     </li>
-
                                     <li class="product">
                                         <a routerLink="/product/4">
                                             <img width="325" height="325" alt="T_4_front"
-                                                class="attachment-shop_catalog wp-post-image" src="../../assets/img/product-4.jpg">
+                                                class="attachment-shop_catalog wp-post-image"
+                                                src="../../assets/img/product-4.jpg">
                                             <h3>Ship Your Idea</h3>
                                             <span class="price"><span class="amount">£20.00</span></span>
                                         </a>
-
                                         <a class="add_to_cart_button" data-quantity="1" data-product_sku=""
                                             data-product_id="22" rel="nofollow" routerLink="/product/4">Select
                                             options</a>
@@ -150,22 +141,19 @@
                                 </ul>
                             </div>
 
-
+                            <!-- ----- cart totals ----- -->
                             <div class="cart_totals ">
                                 <h2>Cart Totals</h2>
-
                                 <table cellspacing="0">
                                     <tbody>
                                         <tr class="cart-subtotal">
                                             <th>Cart Subtotal</th>
                                             <td><span class="amount">£{{cart.totalPrice}}</span></td>
                                         </tr>
-
                                         <tr class="shipping">
                                             <th>Shipping and Handling</th>
                                             <td>Free Shipping</td>
                                         </tr>
-
                                         <tr class="order-total">
                                             <th>Order Total</th>
                                             <td><strong><span class="amount">£{{cart.totalPrice}}</span></strong> </td>
@@ -173,15 +161,13 @@
                                     </tbody>
                                 </table>
                             </div>
-
-
+                            <!-- ------ shipping calculator ----- -->
                             <form method="post" action="#" class="shipping_calculator">
-                                <h2><a class="shipping-calculator-button" data-bs-toggle="collapse" data-bs-target="#calcalute-shipping-wrap"ata-toggle="collapse"
-                                        aria-expanded="false"
-                                        aria-controls="calcalute-shipping-wrap">Calculate Shipping</a></h2>
-
+                                <h2><a class="shipping-calculator-button" data-bs-toggle="collapse"
+                                        data-bs-target="#calcalute-shipping-wrap" ata-toggle="collapse"
+                                        aria-expanded="false" aria-controls="calcalute-shipping-wrap">Calculate
+                                        Shipping</a></h2>
                                 <section id="calcalute-shipping-wrap" class="shipping-calculator-form collapse">
-
                                     <p class="form-row form-row-wide">
                                         <select rel="calc_shipping_state" class="country_to_state"
                                             id="calc_shipping_country" name="calc_shipping_country">
@@ -432,23 +418,16 @@
                                             <option value="ZW">Zimbabwe</option>
                                         </select>
                                     </p>
-
                                     <p class="form-row form-row-wide"><input type="text" id="calc_shipping_state"
                                             name="calc_shipping_state" placeholder="State / county" value=""
                                             class="input-text"> </p>
-
                                     <p class="form-row form-row-wide"><input type="text" id="calc_shipping_postcode"
                                             name="calc_shipping_postcode" placeholder="Postcode / Zip" value=""
                                             class="input-text"></p>
-
-
                                     <p><button class="button" value="1" name="calc_shipping" type="submit">Update
                                             Totals</button></p>
-
                                 </section>
                             </form>
-
-
                         </div>
                     </div>
                 </div>

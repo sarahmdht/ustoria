@@ -1,18 +1,25 @@
 # Ustoria
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
-This is a dynamic e-store with pages:
-- home page
-- shop page
-- single product page
-- cart page
-- checkout page
+This is a dynamic e-store that gets products from external API with pages:
+- home page: 
+           that shows latest products, top-sellers, and recently-viewed products.
+- shop page:
+           showing 16 product per page and fetching them from external API
+- single product page:
+           showing more details about a product
+- cart page:
+           showing added items to cart, changing quantity, and calculates subtotal and total
+- checkout page:
+           showing order details and adding shipping details
 
 ## Technologies used
 
 - Bootstrap 5
 - FontAwesome 6
-- json product database
+- Owl-carousel-o
+- bxslider
+- json fake database
 
 ## Development server
 

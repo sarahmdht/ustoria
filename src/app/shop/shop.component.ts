@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsService } from '../services/products.service';
-import { Product } from '../shared/models/Product';
-import { CartService } from '../services/cart.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+
+// models and services
+import { ProductsService } from '../services/products/products.service';
+import { Product } from '../shared/models/Product';
+import { CartService } from '../services/cart/cart.service';
 import CartItem from '../shared/models/CartItem';
 
 @Component({
@@ -24,5 +26,6 @@ export class ShopComponent {
   }
   addCartItem(item: Product) {
     this.cartService.addToCart(item);
+    this.router.navigateByUrl('/cart');
   }
 }

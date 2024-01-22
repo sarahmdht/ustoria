@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../shared/models/Product';
+import { Product } from '../../shared/models/Product';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,6 @@ export class ProductsService {
    }
  
    // get product by ID for single product
- 
    async getProductById(id: number): Promise<Product | undefined> {
      const data = await fetch(`${this.productsApiUrl}/${id}`);
      return await data.json() ?? {};

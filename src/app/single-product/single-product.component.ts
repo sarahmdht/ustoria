@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { ProductsService } from '../services/products.service';
+
+// models and services
+import { ProductsService } from '../services/products/products.service';
 import { Product } from '../shared/models/Product';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../services/cart/cart.service';
 import { Cart } from '../shared/models/Cart';
 import CartItem from '../shared/models/CartItem';
+
+// components
 import { SideBarComponent } from '../side-bar/side-bar.component';
 import { MainContentComponent } from '../main-content/main-content.component';
 import { MatTabsModule } from '@angular/material/tabs';
+
+// font awesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,6 +39,7 @@ export class SingleProductComponent {
     private router: Router,
     private cartService: CartService) {
 
+    //to read product id and bring it
     this.activatedRoute.params.subscribe(params => {
       this.productId = Number(params['id']);
       this.productService.getProductById(this.productId).then((product: Product | undefined) => {
@@ -46,6 +53,7 @@ export class SingleProductComponent {
     this.cart = this.cartService.getCart();
   }
 
+  // to add item to cart
   addToCart() {
     if (this.productDetails) {
       this.cartService.addToCart(this.productDetails);
@@ -55,7 +63,7 @@ export class SingleProductComponent {
   }
 
 
-
+  // to update quantity
   changeQuantity(quantityInString: string) {
     if (this.productDetails) {
       const quantity = parseInt(quantityInString);
@@ -63,9 +71,8 @@ export class SingleProductComponent {
       this.setCart();
     }
   }
-  //   to handle tabs
 
-
+  //   to handle tabs in description area using angular materials
   changeTab(tab: string) {
     this.activeTab = tab;
   }

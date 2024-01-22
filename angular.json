@@ -35,7 +35,8 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bxslider/dist/jquery.bxslider.min.js"
+              "node_modules/bxslider/dist/jquery.bxslider.min.js",
+              "src/assets/js/owl.carousel.js"
             ]
           },
           "configurations": {

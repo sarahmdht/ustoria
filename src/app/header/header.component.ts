@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+
+// models and services
 import { Cart } from '../shared/models/Cart';
-import { CartService } from '../services/cart.service';
+import { CartService } from '../services/cart/cart.service';
 
 // fontAwesome 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -21,7 +23,7 @@ heart = faHeart;
 user = faUser;
 cart = faShoppingCart;
 
-carttotal!: Cart;
+carttotal!: Cart;  //to update the above cart button with actual cart
 constructor(private cartService: CartService) {
   this.setCart();
  }

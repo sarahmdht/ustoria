@@ -14,13 +14,12 @@ declare var $: any;
   styleUrl: './bxslider.component.css'
 })
 export class BxsliderComponent {
-  ngAfterViewInit(): void {
+  constructor() {
     $(document).ready(function () {
       const slider = ($('#bxslider-home4') as any).bxSlider({
         auto: true,
-        nextText: '<fa-icon [icon]="right"></fa-icon>',
-        prevText: '<fa-icon [icon]="right"></fa-icon>',
-
+        nextText: ">",
+        prevText: "<",
       });
     });
   }

@@ -1,8 +1,6 @@
 <!-- ------ carousel area ------ -->
 <app-bxslider></app-bxslider>
 
-<!-- <app-slider-carousel></app-slider-carousel> -->
-
 <!-- ------ promo area ------ -->
 <app-promo-area></app-promo-area>
 
@@ -14,16 +12,15 @@
                 <div class="col-md-12">
                     <div class="latest-product">
                         <h2 class="section-title">Latest Products</h2>
-                        <div class="product-carousel">
-                            <app-main-content></app-main-content>
-                        </div>
+
+                        <app-main-content></app-main-content>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- ------ End main content area ------ -->
 
 <!-- ------- brands area ------- -->
 <div class="brands-area">
@@ -33,22 +30,24 @@
             <div class="col-md-12">
                 <div class="brand-wrapper">
                     <div class="brand-list">
-                        <img src="../../assets/img/brand1.png" alt="">
-                        <img src="../../assets/img/brand2.png" alt="">
-                        <img src="../../assets/img/brand3.png" alt="">
-                        <img src="../../assets/img/brand4.png" alt="">
-                        <img src="../../assets/img/brand5.png" alt="">
-                        <img src="../../assets/img/brand6.png" alt="">
-                        <img src="../../assets/img/brand1.png" alt="">
-                        <img src="../../assets/img/brand2.png" alt="">
+                        <owl-carousel-o [options]="customOptions">
+                            <ng-container>
+                                <ng-template carouselSlide><img src="../../assets/img/brand1.png" alt=""></ng-template>
+                                <ng-template carouselSlide><img src="../../assets/img/brand2.png" alt=""></ng-template>
+                                <ng-template carouselSlide><img src="../../assets/img/brand3.png" alt=""></ng-template>
+                                <ng-template carouselSlide> <img src="../../assets/img/brand4.png" alt=""></ng-template>
+                                <ng-template carouselSlide><img src="../../assets/img/brand5.png" alt=""></ng-template>
+                                <ng-template carouselSlide><img src="../../assets/img/brand6.png" alt=""> </ng-template>
+                            </ng-container>
+                        </owl-carousel-o>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- ------- End brands area ------- -->
 
+<!-- ------- buttom 3 sections ------- -->
 <div class="product-widget-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
